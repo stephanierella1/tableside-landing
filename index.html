@@ -276,57 +276,16 @@
       line-height: 1.65;
       color: rgba(160,152,128,0.8);
     }
-    .right-quote {
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(221,216,207,0.1);
-      opacity: 0;
-      animation: fadeUp 0.7s 0.6s forwards;
-    }
-    .right-quote blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      font-style: italic;
-      color: rgba(250,247,242,0.35);
-      line-height: 1.5;
-    }
 
-    /* ── MARQUEE ── */
-    .marquee {
-      background: var(--wood);
-      padding: 12px 0;
-      overflow: hidden;
-      width: 100%;
-    }
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marquee 28s linear infinite;
-    }
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 0 24px;
-      white-space: nowrap;
-    }
-    .marquee-text {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(250,247,242,0.75);
-    }
-    .marquee-dot {
-      width: 3px; height: 3px;
-      border-radius: 50%;
-      background: rgba(250,247,242,0.3);
-      flex-shrink: 0;
-    }
-
-    /* ── SECTIONS ── */
-    .section-wrap { width: 100%; }
+    /* ── CTA ── */
+    .cta-section { padding: 100px 0; border-top: 1px solid var(--border); }
     .inner { max-width: 1200px; margin: 0 auto; padding: 0 72px; }
+    .cta-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
     .section-label {
       font-size: 10px;
       font-weight: 500;
@@ -335,178 +294,6 @@
       color: var(--stone);
       margin-bottom: 16px;
       display: block;
-    }
-
-    /* WHY */
-    .why-section { padding: 100px 0; border-bottom: 1px solid var(--border); }
-    .why-layout {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 72px;
-      align-items: start;
-    }
-    .why-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      font-weight: 300;
-      line-height: 1.12;
-    }
-    .why-headline em { font-style: italic; color: var(--wood); }
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px 44px;
-    }
-    .why-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px;
-      font-weight: 300;
-      color: var(--border);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .why-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 7px;
-    }
-    .why-body { font-size: 13px; line-height: 1.75; color: var(--wood); }
-
-    /* PULL QUOTE */
-    .pull-quote {
-      background: var(--ink);
-      padding: 88px 72px;
-      text-align: center;
-      width: 100%;
-    }
-    .pull-quote blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(24px, 3vw, 44px);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--linen);
-      max-width: 720px;
-      margin: 0 auto 20px;
-      line-height: 1.32;
-    }
-    .pull-attr {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--stone);
-    }
-
-    /* HOW */
-    .how-section { padding: 100px 0; border-bottom: 1px solid var(--border); }
-    .how-header { margin-bottom: 56px; }
-    .how-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      font-weight: 300;
-      color: var(--ink);
-      margin-top: 14px;
-    }
-    .how-steps {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--border);
-    }
-    .how-step { background: var(--linen); padding: 40px 28px; }
-    .step-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 56px;
-      font-weight: 300;
-      color: var(--surface);
-      line-height: 1;
-      margin-bottom: 18px;
-    }
-    .step-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 9px;
-    }
-    .step-body { font-size: 13px; line-height: 1.75; color: var(--wood); }
-
-    /* CREATOR */
-    .creator-section {
-      background: var(--ink);
-      padding: 88px 0;
-      width: 100%;
-    }
-    .creator-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-    .creator-eyebrow {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--stone);
-      margin-bottom: 18px;
-    }
-    .creator-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 3vw, 44px);
-      font-weight: 300;
-      color: var(--linen);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-    .creator-headline em { font-style: italic; color: var(--wood); }
-    .creator-body {
-      font-size: 14px;
-      line-height: 1.8;
-      color: rgba(160,152,128,0.85);
-    }
-    .creator-right {
-      border-left: 1px solid rgba(221,216,207,0.1);
-      padding-left: 64px;
-    }
-    .creator-item {
-      padding-bottom: 28px;
-      margin-bottom: 28px;
-      border-bottom: 1px solid rgba(221,216,207,0.08);
-    }
-    .creator-item:last-of-type { border-bottom: none; margin-bottom: 32px; padding-bottom: 0; }
-    .creator-item-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 19px;
-      font-weight: 400;
-      color: var(--linen);
-      margin-bottom: 6px;
-    }
-    .creator-item-body {
-      font-size: 13px;
-      line-height: 1.7;
-      color: rgba(160,152,128,0.75);
-    }
-    .creator-link {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--wood);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(122,106,82,0.35);
-      padding-bottom: 2px;
-    }
-
-    /* CTA */
-    .cta-section { padding: 100px 0; }
-    .cta-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
     }
     .cta-headline {
       font-family: 'Cormorant Garamond', serif;
@@ -578,7 +365,7 @@
       line-height: 1.5;
     }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 26px 72px;
@@ -615,14 +402,10 @@
     .footer-link:hover { color: var(--ink); }
     .footer-copy { font-size: 11px; color: var(--border); }
 
-    /* ANIMATIONS */
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
     }
 
     /* ── RESPONSIVE ── */
@@ -636,24 +419,6 @@
 
       .inner { padding: 0 24px; }
 
-      .why-section { padding: 72px 0; }
-      .why-layout { grid-template-columns: 1fr; gap: 36px; }
-      .why-grid { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
-
-      .pull-quote { padding: 72px 24px; }
-
-      .how-section { padding: 72px 0; }
-      .how-steps { grid-template-columns: 1fr 1fr; }
-
-      .creator-section { padding: 72px 0; }
-      .creator-layout { grid-template-columns: 1fr; gap: 48px; }
-      .creator-right {
-        border-left: none;
-        border-top: 1px solid rgba(221,216,207,0.1);
-        padding-left: 0;
-        padding-top: 40px;
-      }
-
       .cta-section { padding: 72px 0; }
       .cta-layout { grid-template-columns: 1fr; gap: 48px; }
 
@@ -661,8 +426,6 @@
     }
 
     @media (max-width: 540px) {
-      .why-grid { grid-template-columns: 1fr; }
-      .how-steps { grid-template-columns: 1fr; }
       .email-row { flex-direction: column; }
       .email-input { border-right: 1px solid var(--border); border-bottom: none; }
       .email-btn { height: 44px; }
@@ -691,7 +454,7 @@
           what do you want?&rdquo;<br>
           <em>is not a meal plan.</em>
         </h1>
-        <p class="hero-body">Tableside is the meal planning app for every household that has to get dinner on the table. Your favorite recipes from your favorite chefs — all in one place, actually getting cooked. Your week, planned. Your grocery list, done. Your whole household, on the same page.</p>
+        <p class="hero-body">Tableside is the meal planning app for every household that has to get dinner on the table. Your week, planned. Your grocery list, done. Your whole household, on the same page.</p>
 
         <div class="email-block">
           <label class="email-label" for="hero-email">Be first to know when we launch</label>
@@ -737,139 +500,10 @@
             <span class="feature-num">04</span>
             <div>
               <h3 class="feature-title">Cook together</h3>
-              <p class="feature-desc">Invite your household. One shared library, one shared plan, one shared list. Real time. No more &ldquo;I thought you were figuring out dinner.&rdquo;</p>
+              <p class="feature-desc">Invite your household. One shared library, one shared plan, one shared list. No more &ldquo;I thought you were figuring out dinner.&rdquo;</p>
             </div>
           </li>
         </ul>
-        <div class="right-quote">
-          <blockquote>&ldquo;The Sunday spiral, solved.&rdquo;</blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- MARQUEE -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <div class="marquee-item"><span class="marquee-text">Plan your week</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Consider it plated</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Build your library</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Grocery list, done</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Cook together</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Coming Summer 2026</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Android &amp; iOS</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">The Sunday spiral, solved</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Plan your week</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Consider it plated</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Build your library</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Grocery list, done</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Cook together</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Coming Summer 2026</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">Android &amp; iOS</span><span class="marquee-dot"></span></div>
-        <div class="marquee-item"><span class="marquee-text">The Sunday spiral, solved</span><span class="marquee-dot"></span></div>
-      </div>
-    </div>
-
-    <!-- WHY -->
-    <div class="section-wrap">
-      <section class="why-section">
-        <div class="inner">
-          <div class="why-layout">
-            <div>
-              <span class="section-label">The problem</span>
-              <h2 class="why-headline">The Sunday spiral<br>is <em>real.</em></h2>
-            </div>
-            <div class="why-grid">
-              <div>
-                <div class="why-num">47</div>
-                <h3 class="why-title">Browser tabs</h3>
-                <p class="why-body">The average Sunday meal planning session. Open, scroll, close, repeat. End up making pasta again.</p>
-              </div>
-              <div>
-                <div class="why-num">0</div>
-                <h3 class="why-title">Pinterest saves cooked</h3>
-                <p class="why-body">Your boards are beautiful graveyards of good intentions. Saving is not the same as cooking.</p>
-              </div>
-              <div>
-                <div class="why-num">pg.166</div>
-                <h3 class="why-title">Of her cookbook</h3>
-                <p class="why-body">The recipe Jenn posted. The one Half Baked Harvest made look easy. All of it, in one library. One tap to your meal plan.</p>
-              </div>
-              <div>
-                <div class="why-num">&#8734;</div>
-                <h3 class="why-title">&ldquo;I don&rsquo;t know, you pick&rdquo;</h3>
-                <p class="why-body">Said every Sunday. Followed by 45 minutes of scrolling and eventually, pasta.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- PULL QUOTE -->
-    <section class="pull-quote">
-      <blockquote>&ldquo;Food is not just fuel. It&rsquo;s who was sitting at the table.&rdquo;</blockquote>
-      <p class="pull-attr">Tableside &nbsp;·&nbsp; Consider it plated.</p>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <div class="section-wrap">
-      <section class="how-section">
-        <div class="inner">
-          <div class="how-header">
-            <span class="section-label">How it works</span>
-            <h2 class="how-headline">Four steps. Zero Sunday spiral.</h2>
-          </div>
-          <div class="how-steps">
-            <div class="how-step">
-              <div class="step-num">01</div>
-              <h3 class="step-title">Build your library</h3>
-              <p class="step-body">Import from any recipe site, describe something from memory, or add by hand. Your favorite creator just dropped something — it&rsquo;s in your library in seconds.</p>
-            </div>
-            <div class="how-step">
-              <div class="step-num">02</div>
-              <h3 class="step-title">Shuffle your week</h3>
-              <p class="step-body">One tap. Smart algorithm, no repeats, varied cuisines — based on what you actually cook and love.</p>
-            </div>
-            <div class="how-step">
-              <div class="step-num">03</div>
-              <h3 class="step-title">List builds itself</h3>
-              <p class="step-body">Grocery list populates automatically from your plan. Scaled by servings. Categorized. Shared with your household.</p>
-            </div>
-            <div class="how-step">
-              <div class="step-num">04</div>
-              <h3 class="step-title">Cook. Eat. Repeat.</h3>
-              <p class="step-body">Rate what you made. The app gets smarter. Your household stays in sync. Dinner happens, every night.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- CREATOR -->
-    <section class="creator-section">
-      <div class="inner">
-        <div class="creator-layout">
-          <div>
-            <p class="creator-eyebrow">For chefs &amp; creators</p>
-            <h2 class="creator-headline">Your recipes deserve<br>to be <em>cooked</em>,<br>not just saved.</h2>
-            <p class="creator-body">Your audience is already planning their week. They love your food. The gap between saving your recipe and actually making it on a Tuesday night is the problem we solve &mdash; for them, and for you.</p>
-          </div>
-          <div class="creator-right">
-            <div class="creator-item">
-              <p class="creator-item-title">Your recipes, in their meal plan</p>
-              <p class="creator-item-body">One tap. Your audience goes from inspired to cooking &mdash; without losing your recipe to a screenshot folder.</p>
-            </div>
-            <div class="creator-item">
-              <p class="creator-item-title">Real data on what gets cooked</p>
-              <p class="creator-item-body">Not saves. Not likes. Actual meals made. Know which recipes your audience comes back to, week after week.</p>
-            </div>
-            <div class="creator-item">
-              <p class="creator-item-title">A new revenue stream</p>
-              <p class="creator-item-body">List your recipe collections directly on Tableside. No exclusivity. No disruption to what you already do. Just additive.</p>
-            </div>
-            <a href="mailto:stephanie@jointableside.app" class="creator-link">Get in touch about partnerships &rarr;</a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -909,6 +543,7 @@
     <div class="footer-right">
       <a href="https://instagram.com/tableside_app" target="_blank" rel="noopener" class="footer-link">Instagram</a>
       <a href="mailto:stephanie@jointableside.app" class="footer-link">Contact</a>
+      <a href="/privacy" class="footer-link">Privacy Policy</a>
       <span class="footer-copy">&copy; 2026 Tableside</span>
     </div>
   </footer>
@@ -940,22 +575,6 @@
     form.style.display = 'none';
     success.style.display = 'block';
   }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.why-grid > div, .how-step').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(16px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
 </script>
 </body>
 </html>
