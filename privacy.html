@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Tableside</title>
+  <meta name="description" content="Tableside privacy policy. We collect what we need to make the app work. We don't sell your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #1A1C24;
+      --linen:   #FAF7F2;
+      --walnut:  #2C2822;
+      --stone:   #A09880;
+      --wood:    #7A6A52;
+      --border:  #DDD8CF;
+      --surface: #F2EDE4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--linen);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    /* grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+    }
+
+    .page { position: relative; z-index: 1; }
+
+    /* ── NAV ── */
+    nav {
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(250,247,242,0.92);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-monogram {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    .nav-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .nav-wordmark .period { color: var(--wood); }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 72px 48px 100px;
+    }
+
+    .page-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .page-meta {
+      font-size: 13px;
+      color: var(--stone);
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--stone);
+      line-height: 1.6;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-num {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul {
+      list-style: none;
+      margin: 14px 0;
+    }
+
+    .section ul li {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--ink);
+      padding: 6px 0 6px 20px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section ul li:first-child { border-top: 1px solid var(--border); }
+
+    .section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--stone);
+      font-size: 12px;
+    }
+
+    .section strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .subsection-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin: 24px 0 10px;
+      display: block;
+    }
+
+    .contact-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+
+    .contact-block p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--stone);
+      margin-bottom: 8px;
+    }
+
+    .contact-block a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-block a:hover { border-color: var(--ink); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .footer-left { display: flex; align-items: center; gap: 16px; }
+    .footer-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .footer-wordmark .period { color: var(--wood); }
+    .footer-sep { width: 1px; height: 12px; background: var(--border); }
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--stone);
+    }
+    .footer-right { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-link {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--ink); }
+    .footer-copy { font-size: 10px; color: var(--border); letter-spacing: 0.06em; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      nav { padding: 18px 24px; }
+      .content { padding: 48px 24px 72px; }
+      footer { padding: 24px; justify-content: center; text-align: center; }
+      .footer-left { justify-content: center; }
+      .footer-right { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <svg class="nav-monogram" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="18" y="82" width="164" height="4" fill="#1A1C24"/>
+        <rect x="18" y="78" width="3" height="14" fill="#1A1C24"/>
+        <rect x="179" y="78" width="3" height="14" fill="#1A1C24"/>
+        <rect x="98.5" y="86" width="3" height="64" fill="#1A1C24"/>
+        <rect x="86" y="150" width="28" height="3" fill="#1A1C24"/>
+        <circle cx="100" cy="62" r="4" fill="#7A6A52"/>
+      </svg>
+      <span class="nav-wordmark">Tableside<span class="period">.</span></span>
+    </a>
+  </nav>
+
+  <main>
+    <div class="content">
+
+      <span class="page-eyebrow">Legal</span>
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-meta">Stephanie Ventura, operating as Tableside &nbsp;·&nbsp; Effective May 19, 2026</p>
+
+      <p class="intro">Tableside is a private household meal planning tool. We collect what we need to make the app work. We don't sell your data. We don't show you ads.</p>
+
+      <div class="section">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Who we are</h2>
+        <p>Tableside is operated by Stephanie Ventura. If you have questions about this policy, contact us at <a href="mailto:stephanie@jointableside.app">stephanie@jointableside.app</a>.</p>
+      </div>
+
+      <div class="section">
+        <span class="section-num">02</span>
+        <h2 class="section-title">What we collect</h2>
+
+        <span class="subsection-label">Information you give us</span>
+        <ul>
+          <li>Name and email address when you create an account</li>
+          <li>Recipes you add to your library, including imported URLs and manually entered content</li>
+          <li>Meal plans, ratings, and cooking activity you record in the app</li>
+          <li>Household information, including member names you add</li>
+        </ul>
+
+        <span class="subsection-label">Information we collect automatically</span>
+        <ul>
+          <li>Device identifiers and operating system information</li>
+          <li>Push notification tokens if you enable notifications</li>
+          <li>App usage data — which features you use, how often, in what sequence</li>
+          <li>Crash reports and performance data</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <span class="section-num">03</span>
+        <h2 class="section-title">How we use it</h2>
+        <p>We use your data to:</p>
+        <ul>
+          <li>Run the app and sync your household in real time</li>
+          <li>Power the shuffle algorithm — your ratings, cooking history, and preferences make it smarter over time</li>
+          <li>Send you a notification when we have something worth telling you</li>
+          <li>Understand how the app is being used so we can improve it</li>
+          <li>Generate aggregated, anonymized reports on recipe performance for creator partners (see Section 5)</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <span class="section-num">04</span>
+        <h2 class="section-title">How we store and protect it</h2>
+        <p>Your data is stored in Google Firebase (Firestore), a cloud database with industry-standard encryption at rest and in transit. We do not store payment information.</p>
+        <p>We retain your data for as long as your account is active. If you delete your account, your personal data is deleted within 30 days.</p>
+      </div>
+
+      <div class="section">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Creator partners and aggregated data</h2>
+        <p>Tableside's creator partnership program allows recipe creators to see how their recipes perform on the platform. We share only aggregated, anonymized data — for example, how many households added a recipe to their library, how many times it was cooked, and how it was rated on average.</p>
+        <p>We never share individual user data, names, emails, or household information with creator partners. You cannot be identified from any data we share.</p>
+      </div>
+
+      <div class="section">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Who else sees your data</h2>
+        <p>We do not sell your personal data. Ever.</p>
+        <p>We use the following third-party services to operate the app:</p>
+        <ul>
+          <li><strong>Google Firebase</strong> — authentication, database, and cloud infrastructure</li>
+          <li><strong>Anthropic</strong> — AI-powered recipe import and description features. Recipes you import or describe are processed by Anthropic's API. See Anthropic's privacy policy at anthropic.com/privacy.</li>
+        </ul>
+        <p>We may disclose your data if required by law or to protect the rights and safety of our users.</p>
+      </div>
+
+      <div class="section">
+        <span class="section-num">07</span>
+        <h2 class="section-title">Your household</h2>
+        <p>When you join a household, other members can see your meal plan, recipe library, and grocery list. This is the core feature of the app. You can leave a household at any time from your Profile.</p>
+      </div>
+
+      <div class="section">
+        <span class="section-num">08</span>
+        <h2 class="section-title">Children</h2>
+        <p>Tableside is not directed at children under 13. We do not knowingly collect data from children under 13. If you believe a child has provided us with personal information, contact us at <a href="mailto:stephanie@jointableside.app">stephanie@jointableside.app</a> and we will delete it.</p>
+      </div>
+
+      <div class="section">
+        <span class="section-num">09</span>
+        <h2 class="section-title">Your rights</h2>
+        <p>You can:</p>
+        <ul>
+          <li>Access or export your data by contacting us at stephanie@jointableside.app</li>
+          <li>Delete your account and associated data from your Profile settings</li>
+          <li>Opt out of push notifications in your device settings</li>
+        </ul>
+        <p>If you are in the European Economic Area or California, you may have additional rights under GDPR or CCPA. Contact us and we'll respond within 30 days.</p>
+      </div>
+
+      <div class="section">
+        <span class="section-num">10</span>
+        <h2 class="section-title">Changes to this policy</h2>
+        <p>If we make material changes, we'll notify you in the app before they take effect. The effective date at the top of this page will always reflect the current version.</p>
+      </div>
+
+      <div class="contact-block">
+        <p>Questions about this policy?</p>
+        <a href="mailto:stephanie@jointableside.app">stephanie@jointableside.app</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <span class="footer-wordmark">Tableside<span class="period">.</span></span>
+      <div class="footer-sep"></div>
+      <span class="footer-tagline">Consider it plated.</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://instagram.com/tableside_app" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+      <a href="mailto:stephanie@jointableside.app" class="footer-link">Contact</a>
+      <a href="/privacy" class="footer-link">Privacy Policy</a>
+      <span class="footer-copy">&copy; 2026 Tableside</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
