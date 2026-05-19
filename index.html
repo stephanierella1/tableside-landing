@@ -10,13 +10,14 @@
   <meta property="og:url" content="https://jointableside.app" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --ink:     #1A1C24;
       --linen:   #FAF7F2;
+      --walnut:  #2C2822;
       --stone:   #A09880;
       --wood:    #7A6A52;
       --border:  #DDD8CF;
@@ -29,7 +30,7 @@
       background: var(--linen);
       color: var(--ink);
       font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       overflow-x: hidden;
       width: 100%;
     }
@@ -49,25 +50,36 @@
 
     /* ── NAV ── */
     nav {
-      padding: 24px 48px;
+      padding: 20px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      background: rgba(250,247,242,0.9);
+      background: rgba(250,247,242,0.92);
       backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 100;
     }
-    .nav-wordmark {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: var(--ink);
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
     }
+    .nav-monogram {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    .nav-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .nav-wordmark .period { color: var(--wood); }
     .nav-right { display: flex; align-items: center; gap: 28px; }
     .nav-tagline {
       font-family: 'Cormorant Garamond', serif;
@@ -76,9 +88,9 @@
       color: var(--stone);
     }
     .nav-ig {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--wood);
       text-decoration: none;
@@ -92,7 +104,7 @@
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: calc(100vh - 73px);
+      min-height: calc(100vh - 63px);
       width: 100%;
     }
     .hero-left {
@@ -119,12 +131,12 @@
       top: -100px; right: -100px;
       width: 340px; height: 340px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(122,106,82,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(122,106,82,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .eyebrow {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -135,7 +147,7 @@
     }
     .hero-headline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(36px, 4vw, 60px);
+      font-size: clamp(36px, 4vw, 58px);
       font-weight: 300;
       line-height: 1.08;
       margin-bottom: 24px;
@@ -144,113 +156,45 @@
     }
     .hero-headline em { font-style: italic; color: var(--wood); }
     .hero-body {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--wood);
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--stone);
       margin-bottom: 40px;
       opacity: 0;
       animation: fadeUp 0.7s 0.4s forwards;
     }
 
-    .email-block { opacity: 0; animation: fadeUp 0.7s 0.55s forwards; }
+    /* Beehiiv form wrapper */
+    .email-block {
+      opacity: 0;
+      animation: fadeUp 0.7s 0.55s forwards;
+    }
     .email-label {
       display: block;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--stone);
-      margin-bottom: 10px;
-    }
-    .email-row { display: flex; }
-    .email-input {
-      flex: 1;
-      min-width: 0;
-      height: 46px;
-      padding: 0 16px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      color: var(--ink);
-      background: var(--linen);
-      border: 1px solid var(--border);
-      border-right: none;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .email-input::placeholder { color: var(--stone); }
-    .email-input:focus { border-color: var(--wood); }
-    .email-btn {
-      height: 46px;
-      padding: 0 20px;
-      background: var(--ink);
-      color: var(--linen);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 1px solid var(--ink);
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s;
-    }
-    .email-btn:hover { background: var(--wood); border-color: var(--wood); }
-    .email-fine { font-size: 11px; color: var(--stone); margin-top: 9px; }
-    .email-success {
-      display: none;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px;
-      font-style: italic;
-      color: var(--wood);
-      margin-top: 10px;
+      margin-bottom: 12px;
     }
 
-    .hero-divider {
-      width: 40px; height: 1px;
-      background: var(--border);
-      margin: 40px 0 24px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.65s forwards;
-    }
-    .badges {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.7s forwards;
-    }
-    .badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 13px;
-      border: 1px solid var(--border);
-    }
-    .badge-text {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--stone);
-    }
-    .badge-soon {
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--stone);
-      background: var(--surface);
-      padding: 2px 6px;
+    /* Override Beehiiv embed styles to match brand */
+    [data-beehiiv-form] iframe,
+    .beehiiv-embed-wrapper {
+      width: 100% !important;
     }
 
-    /* hero right */
+
+
+    /* hero right — feature list */
     .feature-list {
       list-style: none;
       opacity: 0;
       animation: fadeUp 0.7s 0.35s forwards;
     }
     .feature-item {
-      padding: 24px 0;
+      padding: 22px 0;
       border-bottom: 1px solid rgba(221,216,207,0.1);
       display: grid;
       grid-template-columns: 26px 1fr;
@@ -261,128 +205,92 @@
     .feature-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 13px;
+      font-weight: 300;
       color: var(--wood);
       padding-top: 2px;
     }
     .feature-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 19px;
-      font-weight: 400;
+      font-weight: 300;
       color: var(--linen);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
     .feature-desc {
       font-size: 13px;
-      line-height: 1.65;
+      line-height: 1.7;
       color: rgba(160,152,128,0.8);
     }
 
-    /* ── CTA ── */
-    .cta-section { padding: 100px 0; border-top: 1px solid var(--border); }
-    .inner { max-width: 1200px; margin: 0 auto; padding: 0 72px; }
-    .cta-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
+    /* ── CLOSING ── */
+    .closing {
+      background: var(--walnut);
+      padding: 100px 72px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-    }
-    .section-label {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--stone);
-      margin-bottom: 16px;
-      display: block;
-    }
-    .cta-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 3vw, 50px);
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .cta-headline em { font-style: italic; color: var(--wood); }
-    .cta-body { font-size: 14px; line-height: 1.8; color: var(--wood); margin-bottom: 18px; }
-    .cta-story {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
-      font-style: italic;
-      color: var(--stone);
-      line-height: 1.6;
-    }
-    .cta-card {
-      background: var(--surface);
-      padding: 44px;
-      border: 1px solid var(--border);
-    }
-    .cta-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 7px;
-    }
-    .cta-card-sub { font-size: 13px; color: var(--stone); margin-bottom: 24px; line-height: 1.6; }
-    .cta-col { display: flex; flex-direction: column; gap: 10px; }
-    .cta-input {
-      width: 100%;
-      height: 48px;
-      padding: 0 16px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      color: var(--ink);
-      background: var(--linen);
-      border: 1px solid var(--border);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .cta-input::placeholder { color: var(--stone); }
-    .cta-input:focus { border-color: var(--wood); }
-    .cta-btn {
-      width: 100%;
-      height: 48px;
-      background: var(--ink);
-      color: var(--linen);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .cta-btn:hover { background: var(--wood); }
-    .cta-success {
-      display: none;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-style: italic;
-      color: var(--wood);
       text-align: center;
-      padding: 14px 0;
-      line-height: 1.5;
+      width: 100%;
+    }
+
+    /* Stacked lockup SVG inline */
+    .closing-lockup {
+      width: 280px;
+      max-width: 80vw;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.1s forwards;
+    }
+    .closing-lockup .cor {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+    }
+    .closing-lockup .cor-it {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .closing-divider {
+      width: 40px; height: 1px;
+      background: rgba(221,216,207,0.2);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+
+    .closing-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(15px, 2vw, 18px);
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(250,247,242,0.55);
+      line-height: 1.8;
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.3s forwards;
     }
 
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 26px 72px;
+      padding: 24px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 14px;
+      background: var(--linen);
     }
-    .footer-left { display: flex; align-items: center; gap: 18px; }
+    .footer-left { display: flex; align-items: center; gap: 16px; }
     .footer-wordmark {
       font-family: 'Cormorant Garamond', serif;
       font-size: 15px;
-      font-weight: 400;
-      letter-spacing: 0.06em;
+      font-weight: 300;
+      letter-spacing: -0.01em;
       color: var(--ink);
     }
+    .footer-wordmark .period { color: var(--wood); }
     .footer-sep { width: 1px; height: 12px; background: var(--border); }
     .footer-tagline {
       font-family: 'Cormorant Garamond', serif;
@@ -390,17 +298,18 @@
       font-style: italic;
       color: var(--stone);
     }
-    .footer-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-right { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     .footer-link {
-      font-size: 11px;
-      letter-spacing: 0.1em;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--stone);
       text-decoration: none;
       transition: color 0.2s;
     }
     .footer-link:hover { color: var(--ink); }
-    .footer-copy { font-size: 11px; color: var(--border); }
+    .footer-copy { font-size: 10px; color: var(--border); letter-spacing: 0.06em; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
@@ -417,18 +326,11 @@
       .hero-left { padding: 56px 24px; border-right: none; border-bottom: 1px solid var(--border); }
       .hero-right { padding: 56px 24px; }
 
-      .inner { padding: 0 24px; }
-
-      .cta-section { padding: 72px 0; }
-      .cta-layout { grid-template-columns: 1fr; gap: 48px; }
+      .closing { padding: 72px 24px; }
 
       footer { padding: 24px; justify-content: center; text-align: center; }
-    }
-
-    @media (max-width: 540px) {
-      .email-row { flex-direction: column; }
-      .email-input { border-right: 1px solid var(--border); border-bottom: none; }
-      .email-btn { height: 44px; }
+      .footer-left { justify-content: center; }
+      .footer-right { justify-content: center; }
     }
   </style>
 </head>
@@ -436,7 +338,18 @@
 <div class="page">
 
   <nav>
-    <a href="/" class="nav-wordmark">Tableside</a>
+    <a href="/" class="nav-brand">
+      <!-- Monogram mark -->
+      <svg class="nav-monogram" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="18" y="82" width="164" height="4" fill="#1A1C24"/>
+        <rect x="18" y="78" width="3" height="14" fill="#1A1C24"/>
+        <rect x="179" y="78" width="3" height="14" fill="#1A1C24"/>
+        <rect x="98.5" y="86" width="3" height="64" fill="#1A1C24"/>
+        <rect x="86" y="150" width="28" height="3" fill="#1A1C24"/>
+        <circle cx="100" cy="62" r="4" fill="#7A6A52"/>
+      </svg>
+      <span class="nav-wordmark">Tableside<span class="period">.</span></span>
+    </a>
     <div class="nav-right">
       <span class="nav-tagline">Consider it plated.</span>
       <a href="https://instagram.com/tableside_app" target="_blank" rel="noopener" class="nav-ig">@tableside_app</a>
@@ -457,20 +370,11 @@
         <p class="hero-body">Tableside is the meal planning app for every household that has to get dinner on the table. Your week, planned. Your grocery list, done. Your whole household, on the same page.</p>
 
         <div class="email-block">
-          <label class="email-label" for="hero-email">Be first to know when we launch</label>
-          <div class="email-row">
-            <input type="email" id="hero-email" class="email-input" placeholder="your@email.com" autocomplete="email" />
-            <button class="email-btn" onclick="handleHero()">Notify me</button>
-          </div>
-          <p class="email-fine">No spam. Just a note when the table is set.</p>
-          <p class="email-success" id="hero-success">Your table is almost set. We&rsquo;ll be in touch.</p>
+          <span class="email-label">Be first to know when we launch</span>
+          <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="14cb9dae-9286-49c0-997a-4176cca4bb17"></script>
         </div>
 
-        <div class="hero-divider"></div>
-        <div class="badges">
-          <div class="badge"><span class="badge-text">Android</span><span class="badge-soon">Summer 2026</span></div>
-          <div class="badge"><span class="badge-text">iOS</span><span class="badge-soon">Soon after</span></div>
-        </div>
+
       </div>
 
       <div class="hero-right">
@@ -507,36 +411,53 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <div class="section-wrap">
-      <section class="cta-section">
-        <div class="inner">
-          <div class="cta-layout">
-            <div>
-              <span class="section-label">Coming Summer 2026</span>
-              <h2 class="cta-headline">Your table<br>is almost <em>set.</em></h2>
-              <p class="cta-body">Tableside launches on Android this summer, with iOS close behind. Drop your email and you&rsquo;ll be first to know when the doors open.</p>
-              <p class="cta-story">Built by a household that had to solve this.<br>For every household that has to, too.</p>
-            </div>
-            <div class="cta-card">
-              <h3 class="cta-card-title">Get early access.</h3>
-              <p class="cta-card-sub">Be first on the list. No spam &mdash; just a note when we&rsquo;re ready for you.</p>
-              <div class="cta-col" id="cta-form">
-                <input type="email" id="cta-email" class="cta-input" placeholder="your@email.com" autocomplete="email" />
-                <button class="cta-btn" onclick="handleCta()">Consider me notified</button>
-              </div>
-              <p class="cta-success" id="cta-success">Your table is almost set.<br>We&rsquo;ll be in touch.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <!-- CLOSING -->
+    <section class="closing">
+      <!-- Stacked lockup: monogram + wordmark + tagline -->
+      <svg class="closing-lockup" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" aria-label="Tableside. Consider it plated.">
+        <!-- Monogram centered at top -->
+        <g transform="translate(172, 10) scale(0.28)">
+          <rect x="18" y="82" width="164" height="4" fill="#FAF7F2"/>
+          <rect x="18" y="78" width="3" height="14" fill="#FAF7F2"/>
+          <rect x="179" y="78" width="3" height="14" fill="#FAF7F2"/>
+          <rect x="98.5" y="86" width="3" height="64" fill="#FAF7F2"/>
+          <rect x="86" y="150" width="28" height="3" fill="#FAF7F2"/>
+          <circle cx="100" cy="62" r="4" fill="#7A6A52"/>
+        </g>
+        <!-- Wordmark -->
+        <text x="200" y="140"
+          font-family="'Cormorant Garamond', Garamond, serif"
+          font-size="64"
+          font-weight="300"
+          fill="#FAF7F2"
+          text-anchor="middle"
+          letter-spacing="-0.3">Tableside<tspan fill="#7A6A52">.</tspan></text>
+        <!-- Flanking rules -->
+        <line x1="88" y1="172" x2="148" y2="172" stroke="rgba(122,106,82,0.35)" stroke-width="1"/>
+        <line x1="252" y1="172" x2="312" y2="172" stroke="rgba(122,106,82,0.35)" stroke-width="1"/>
+        <!-- Tagline -->
+        <text x="200" y="200"
+          font-family="'Cormorant Garamond', Garamond, serif"
+          font-size="22"
+          font-weight="300"
+          font-style="italic"
+          fill="#A09880"
+          text-anchor="middle">Consider it plated.</text>
+      </svg>
+
+      <div class="closing-divider"></div>
+
+      <p class="closing-body">
+        Built by a household that had to solve this.<br>
+        For every household that has to, too.
+      </p>
+    </section>
 
   </main>
 
   <footer>
     <div class="footer-left">
-      <span class="footer-wordmark">Tableside</span>
+      <span class="footer-wordmark">Tableside<span class="period">.</span></span>
       <div class="footer-sep"></div>
       <span class="footer-tagline">Consider it plated.</span>
     </div>
@@ -549,32 +470,5 @@
   </footer>
 
 </div>
-<script>
-  function handleHero() {
-    const input = document.getElementById('hero-email');
-    const success = document.getElementById('hero-success');
-    if (!input.value || !input.value.includes('@')) {
-      input.style.borderColor = '#C62828';
-      setTimeout(() => input.style.borderColor = '', 1500);
-      return;
-    }
-    document.querySelector('.email-row').style.display = 'none';
-    document.querySelector('.email-fine').style.display = 'none';
-    success.style.display = 'block';
-  }
-
-  function handleCta() {
-    const input = document.getElementById('cta-email');
-    const form = document.getElementById('cta-form');
-    const success = document.getElementById('cta-success');
-    if (!input.value || !input.value.includes('@')) {
-      input.style.borderColor = '#C62828';
-      setTimeout(() => input.style.borderColor = '', 1500);
-      return;
-    }
-    form.style.display = 'none';
-    success.style.display = 'block';
-  }
-</script>
 </body>
 </html>
