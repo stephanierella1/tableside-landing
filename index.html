@@ -35,7 +35,6 @@
       width: 100%;
     }
 
-    /* grain */
     body::before {
       content: '';
       position: fixed;
@@ -67,11 +66,7 @@
       gap: 10px;
       text-decoration: none;
     }
-    .nav-monogram {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-    }
+    .nav-monogram { width: 22px; height: 22px; flex-shrink: 0; }
     .nav-wordmark {
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px;
@@ -164,7 +159,7 @@
       animation: fadeUp 0.7s 0.4s forwards;
     }
 
-    /* Beehiiv form wrapper */
+    /* ── FORM ── */
     .email-block {
       opacity: 0;
       animation: fadeUp 0.7s 0.55s forwards;
@@ -178,16 +173,58 @@
       color: var(--stone);
       margin-bottom: 12px;
     }
-
-    /* Override Beehiiv embed styles to match brand */
-    [data-beehiiv-form] iframe,
-    .beehiiv-embed-wrapper {
-      width: 100% !important;
+    .email-row { display: flex; }
+    .email-input {
+      flex: 1;
+      min-width: 0;
+      height: 46px;
+      padding: 0 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      background: var(--linen);
+      border: 1px solid var(--border);
+      border-right: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-input::placeholder { color: var(--stone); }
+    .email-input:focus { border-color: var(--wood); }
+    .email-btn {
+      height: 46px;
+      padding: 0 20px;
+      background: var(--ink);
+      color: var(--linen);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .email-btn:hover { background: var(--wood); border-color: var(--wood); }
+    .email-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .email-fine { font-size: 11px; color: var(--stone); margin-top: 9px; }
+    .email-success {
+      display: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--wood);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+    .email-error {
+      display: none;
+      font-size: 12px;
+      color: #8B2E2E;
+      margin-top: 8px;
     }
 
-
-
-    /* hero right — feature list */
+    /* ── FEATURES ── */
     .feature-list {
       list-style: none;
       opacity: 0;
@@ -232,8 +269,6 @@
       text-align: center;
       width: 100%;
     }
-
-    /* Stacked lockup SVG inline */
     .closing-lockup {
       width: 280px;
       max-width: 80vw;
@@ -241,16 +276,6 @@
       opacity: 0;
       animation: fadeUp 0.7s 0.1s forwards;
     }
-    .closing-lockup .cor {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-    }
-    .closing-lockup .cor-it {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-style: italic;
-    }
-
     .closing-divider {
       width: 40px; height: 1px;
       background: rgba(221,216,207,0.2);
@@ -258,7 +283,6 @@
       opacity: 0;
       animation: fadeUp 0.7s 0.2s forwards;
     }
-
     .closing-body {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(15px, 2vw, 18px);
@@ -321,16 +345,18 @@
     @media (max-width: 960px) {
       nav { padding: 18px 24px; }
       .nav-tagline { display: none; }
-
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 56px 24px; border-right: none; border-bottom: 1px solid var(--border); }
       .hero-right { padding: 56px 24px; }
-
       .closing { padding: 72px 24px; }
-
       footer { padding: 24px; justify-content: center; text-align: center; }
       .footer-left { justify-content: center; }
       .footer-right { justify-content: center; }
+    }
+    @media (max-width: 540px) {
+      .email-row { flex-direction: column; }
+      .email-input { border-right: 1px solid var(--border); border-bottom: none; }
+      .email-btn { height: 44px; }
     }
   </style>
 </head>
@@ -339,7 +365,6 @@
 
   <nav>
     <a href="/" class="nav-brand">
-      <!-- Monogram mark -->
       <svg class="nav-monogram" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect x="18" y="82" width="164" height="4" fill="#1A1C24"/>
         <rect x="18" y="78" width="3" height="14" fill="#1A1C24"/>
@@ -370,11 +395,15 @@
         <p class="hero-body">Tableside is the meal planning app for every household that has to get dinner on the table. Your week, planned. Your grocery list, done. Your whole household, on the same page.</p>
 
         <div class="email-block">
-          <span class="email-label">Be first to know when we launch</span>
-          <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="14cb9dae-9286-49c0-997a-4176cca4bb17"></script>
+          <label class="email-label" for="hero-email">Be first to know when we launch</label>
+          <div class="email-row" id="hero-form-row">
+            <input type="email" id="hero-email" name="email" class="email-input" placeholder="your@email.com" autocomplete="email" required />
+            <button class="email-btn" id="hero-btn" onclick="submitEmail(event)">Notify me</button>
+          </div>
+          <p class="email-fine" id="hero-fine">No spam. Just a note when the table is set.</p>
+          <p class="email-success" id="hero-success">Your table is almost set. We&rsquo;ll be in touch.</p>
+          <p class="email-error" id="hero-error">Something went wrong. Try again or email us directly.</p>
         </div>
-
-
       </div>
 
       <div class="hero-right">
@@ -413,9 +442,7 @@
 
     <!-- CLOSING -->
     <section class="closing">
-      <!-- Stacked lockup: monogram + wordmark + tagline -->
       <svg class="closing-lockup" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" aria-label="Tableside. Consider it plated.">
-        <!-- Monogram centered at top -->
         <g transform="translate(172, 10) scale(0.28)">
           <rect x="18" y="82" width="164" height="4" fill="#FAF7F2"/>
           <rect x="18" y="78" width="3" height="14" fill="#FAF7F2"/>
@@ -424,25 +451,16 @@
           <rect x="86" y="150" width="28" height="3" fill="#FAF7F2"/>
           <circle cx="100" cy="62" r="4" fill="#7A6A52"/>
         </g>
-        <!-- Wordmark -->
         <text x="200" y="140"
           font-family="'Cormorant Garamond', Garamond, serif"
-          font-size="64"
-          font-weight="300"
-          fill="#FAF7F2"
-          text-anchor="middle"
-          letter-spacing="-0.3">Tableside<tspan fill="#7A6A52">.</tspan></text>
-        <!-- Flanking rules -->
+          font-size="64" font-weight="300" fill="#FAF7F2"
+          text-anchor="middle" letter-spacing="-0.3">Tableside<tspan fill="#7A6A52">.</tspan></text>
         <line x1="88" y1="172" x2="148" y2="172" stroke="rgba(122,106,82,0.35)" stroke-width="1"/>
         <line x1="252" y1="172" x2="312" y2="172" stroke="rgba(122,106,82,0.35)" stroke-width="1"/>
-        <!-- Tagline -->
         <text x="200" y="200"
           font-family="'Cormorant Garamond', Garamond, serif"
-          font-size="22"
-          font-weight="300"
-          font-style="italic"
-          fill="#A09880"
-          text-anchor="middle">Consider it plated.</text>
+          font-size="22" font-weight="300" font-style="italic"
+          fill="#A09880" text-anchor="middle">Consider it plated.</text>
       </svg>
 
       <div class="closing-divider"></div>
@@ -470,5 +488,45 @@
   </footer>
 
 </div>
+<script>
+  async function submitEmail(e) {
+    e.preventDefault();
+    const email = document.getElementById('hero-email').value;
+    const btn = document.getElementById('hero-btn');
+    const success = document.getElementById('hero-success');
+    const error = document.getElementById('hero-error');
+    const formRow = document.getElementById('hero-form-row');
+    const fine = document.getElementById('hero-fine');
+
+    if (!email || !email.includes('@')) {
+      document.getElementById('hero-email').style.borderColor = '#8B2E2E';
+      setTimeout(() => document.getElementById('hero-email').style.borderColor = '', 1500);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending\u2026';
+
+    try {
+      const res = await fetch('https://formspree.io/f/meedazpl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+
+      if (res.ok) {
+        formRow.style.display = 'none';
+        fine.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Notify me';
+      error.style.display = 'block';
+    }
+  }
+</script>
 </body>
 </html>
