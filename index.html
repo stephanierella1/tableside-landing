@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tableside — Consider it plated.</title>
-  <meta name="description" content="Meal planning for every household. Plan the week, keep every recipe in one place, and let the grocery list build itself. Coming Summer 2026 — Android first, iOS soon after." />
+  <meta name="description" content="Meal planning for every household. Plan the week, keep every recipe in one place, and let the grocery list build itself. Coming soon — Android first, iOS soon after." />
   <meta name="theme-color" content="#FAF7F2" />
   <meta name="color-scheme" content="light" />
   <link rel="canonical" href="https://jointableside.app/" />
@@ -15,15 +15,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Tableside" />
   <meta property="og:title" content="Tableside — Consider it plated." />
-  <meta property="og:description" content="Because 'I don't know, what do you want?' is not a meal plan. Coming Summer 2026." />
+  <meta property="og:description" content="Because 'I don't know, what do you want?' is not a meal plan. Coming soon." />
   <meta property="og:url" content="https://jointableside.app/" />
   <meta property="og:image" content="https://jointableside.app/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="The Tableside wordmark beside a phone showing this week's dinner menu." />
+  <meta property="og:image:alt" content="The Tableside logo beside a phone showing this week's dinner menu, with the line Coming soon." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Tableside — Consider it plated." />
-  <meta name="twitter:description" content="Because 'I don't know, what do you want?' is not a meal plan. Coming Summer 2026." />
+  <meta name="twitter:description" content="Because 'I don't know, what do you want?' is not a meal plan. Coming soon." />
   <meta name="twitter:image" content="https://jointableside.app/assets/og.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -88,10 +88,10 @@
 
     /* ── Type primitives ── */
     .wordmark {
-      font-family: var(--serif); font-weight: 300; letter-spacing: -.01em;
+      font-family: var(--serif); font-weight: 300; letter-spacing: -.005em;
       color: var(--ink); text-decoration: none; white-space: nowrap;
     }
-    .wordmark .period { color: var(--wood); }
+    .wordmark .period { color: var(--tomato); }
     .caps {
       font-family: var(--sans); font-weight: 500; font-size: 11px;
       letter-spacing: .2em; text-transform: uppercase;
@@ -114,9 +114,11 @@
       height: 100%;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
     }
-    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-    .brand svg { width: 24px; height: 24px; flex-shrink: 0; }
-    .brand .wordmark { font-size: 22px; }
+    /* Mark + wordmark lockup, proportions from the official horizontal lockup (07-horizontal):
+       mark box = 1.6em, box bottom .35em below the wordmark baseline, .4em to the text. */
+    .lockup { display: inline-block; line-height: 1; white-space: nowrap; text-decoration: none; color: var(--ink); }
+    .lockup .mark { display: inline-block; width: 1.6em; height: 1.6em; vertical-align: -.35em; margin-right: .4em; }
+    .brand { font-size: 22px; }
     .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 28px); }
     .nav-link {
       font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none;
@@ -361,7 +363,7 @@
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px 24px;
     }
     .footer-left { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-    .footer-left .wordmark { font-size: 18px; }
+    .footer-left .lockup { font-size: 18px; }
     .footer-sep { width: 1px; height: 14px; background: var(--rule-mid); }
     .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--muted); }
     .footer-right { display: flex; align-items: center; gap: 10px 22px; flex-wrap: wrap; }
@@ -385,7 +387,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 380px) {
       .nav-links { gap: 14px; }
-      .brand .wordmark { font-size: 20px; }
+      .brand { font-size: 20px; }
     }
     @media (min-width: 760px) {
       .plan-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
@@ -412,20 +414,18 @@
 
 <header class="nav">
   <div class="container">
-    <a href="/" class="brand" aria-label="Tableside home">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <a href="/" class="brand lockup" aria-label="Tableside home">
+      <svg class="mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect x="18" y="82" width="164" height="4" fill="#1A1C24"/>
         <rect x="18" y="78" width="3" height="14" fill="#1A1C24"/>
         <rect x="179" y="78" width="3" height="14" fill="#1A1C24"/>
         <rect x="98.5" y="86" width="3" height="64" fill="#1A1C24"/>
         <rect x="86" y="150" width="28" height="3" fill="#1A1C24"/>
-        <circle cx="100" cy="62" r="4" fill="#7A6A52"/>
-      </svg>
-      <span class="wordmark">Tableside<span class="period">.</span></span>
+        <circle cx="100" cy="62" r="4" fill="#D7372A"/>
+      </svg><span class="wordmark">Tableside<span class="period">.</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <!-- app.jointableside.app (the Tableside web app) is not live yet; this link will work once it launches. -->
-      <a href="https://app.jointableside.app" class="nav-link">Sign in</a>
+      <!-- Sign in link hidden until the browser app (app.jointableside.app) launches: <a href="https://app.jointableside.app" class="nav-link">Sign in</a> -->
       <a href="https://instagram.com/tableside_app" target="_blank" rel="noopener" class="nav-link nav-ig" aria-label="Tableside on Instagram (opens in a new tab)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
         <span class="label">@tableside_app</span>
@@ -441,7 +441,7 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow caps"><span>Coming Summer 2026<span class="eb-sep" aria-hidden="true"> &nbsp;·&nbsp; </span><span class="eb-2">Android first, iOS soon after</span></span></p>
+          <p class="eyebrow caps"><span>Coming soon<span class="eb-sep" aria-hidden="true"> &nbsp;·&nbsp; </span><span class="eb-2">Android first, iOS soon after</span></span></p>
           <h1 id="hero-title">Because &ldquo;I don&rsquo;t know,<br> what do you want?&rdquo;<br> <em>is not a meal plan.</em></h1>
           <p class="lede">Tableside is the meal planning app for every household that has to get dinner on the table. <strong>Your week, planned. Your grocery list, done.</strong> Your whole household, on the same page.</p>
 
@@ -609,7 +609,7 @@
         <div class="copy reveal">
           <div class="sec-eyebrow"><span class="num">05</span><span class="line" aria-hidden="true"></span><span class="caps">Your table</span></div>
           <h2 class="title" id="table-title">Who sits at <em>your table.</em></h2>
-          <p class="body">Tableside is built for a household, not one person with a recipe box. Bring everyone in: up to six people, from the ones who cook to the ones who just eat.</p>
+          <p class="body">Tableside is built for a household, not one person with a recipe box. Bring everyone to the table, from the ones who cook to the ones who just eat.</p>
           <ul class="points">
             <li><span><strong>Everyone&rsquo;s preferences.</strong>Each person at the table has their own, from the partner who rates everything to the toddler who eats only noodles.</span></li>
             <li><span><strong>One plan, one list.</strong>Shared in real time, so nobody plans dinner twice and nobody buys milk twice.</span></li>
@@ -620,7 +620,7 @@
             <figure>
               <div class="phone"><div class="screen">
                 <img src="assets/screens/table.webp" width="804" height="1748" loading="lazy" decoding="async"
-                     alt="The Your table screen: Maya cooks with Theo, sharing since February 2026, and their table includes Maya (adult), Theo (adult) and Juniper (kid), plus a card to add who's eating." />
+                     alt="The Your table screen: Maya cooks with Theo, and their table includes Maya (adult), Theo (adult) and Juniper (kid), plus a card to add who's eating." />
               </div></div>
             </figure>
           </div>
@@ -673,9 +673,9 @@
         <rect x="179" y="78" width="3" height="14" fill="#FAF7F2"/>
         <rect x="98.5" y="86" width="3" height="64" fill="#FAF7F2"/>
         <rect x="86" y="150" width="28" height="3" fill="#FAF7F2"/>
-        <circle cx="100" cy="62" r="4" fill="#A09880"/>
+        <circle cx="100" cy="62" r="4" fill="#D7372A"/>
       </g>
-      <text x="200" y="140" font-family="'Cormorant Garamond', Garamond, serif" font-size="64" font-weight="300" fill="#FAF7F2" text-anchor="middle" letter-spacing="-0.3">Tableside<tspan fill="#A09880">.</tspan></text>
+      <text x="200" y="140" font-family="'Cormorant Garamond', Garamond, serif" font-size="64" font-weight="300" fill="#FAF7F2" text-anchor="middle" letter-spacing="-0.3">Tableside<tspan fill="#D7372A">.</tspan></text>
       <line x1="88" y1="172" x2="148" y2="172" stroke="rgba(199,192,174,0.35)" stroke-width="1"/>
       <line x1="252" y1="172" x2="312" y2="172" stroke="rgba(199,192,174,0.35)" stroke-width="1"/>
       <text x="200" y="200" font-family="'Cormorant Garamond', Garamond, serif" font-size="22" font-weight="300" font-style="italic" fill="#C7C0AE" text-anchor="middle">Consider it plated.</text>
@@ -689,7 +689,15 @@
 <footer>
   <div class="container">
     <div class="footer-left">
-      <span class="wordmark">Tableside<span class="period">.</span></span>
+      <span class="lockup">
+        <svg class="mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="18" y="82" width="164" height="4" fill="#1A1C24"/>
+          <rect x="18" y="78" width="3" height="14" fill="#1A1C24"/>
+          <rect x="179" y="78" width="3" height="14" fill="#1A1C24"/>
+          <rect x="98.5" y="86" width="3" height="64" fill="#1A1C24"/>
+          <rect x="86" y="150" width="28" height="3" fill="#1A1C24"/>
+          <circle cx="100" cy="62" r="4" fill="#D7372A"/>
+        </svg><span class="wordmark">Tableside<span class="period">.</span></span></span>
       <span class="footer-sep" aria-hidden="true"></span>
       <span class="footer-tagline">Consider it plated.</span>
     </div>
@@ -697,8 +705,7 @@
       <a href="https://instagram.com/tableside_app" target="_blank" rel="noopener" class="footer-link">Instagram</a>
       <a href="mailto:stephanie@jointableside.app" class="footer-link">Contact</a>
       <a href="/privacy" class="footer-link">Privacy Policy</a>
-      <!-- app.jointableside.app (the Tableside web app) is not live yet; this link will work once it launches. -->
-      <a href="https://app.jointableside.app" class="footer-link">Sign in</a>
+      <!-- Sign in link hidden until the browser app (app.jointableside.app) launches: <a href="https://app.jointableside.app" class="footer-link">Sign in</a> -->
       <span class="footer-copy">&copy; 2026 Tableside</span>
     </div>
   </div>
