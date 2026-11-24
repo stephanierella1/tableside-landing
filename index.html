@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tableside — Consider it plated.</title>
-  <meta name="description" content="Meal planning for every household. Plan the week, keep every recipe in one place, and let the grocery list build itself. Coming soon — Android first, iOS soon after." />
+  <title>Tableside. Consider it plated.</title>
+  <meta name="description" content="Meal planning for every household. The week is planned, the recipes are in one place, the grocery list writes itself. Coming soon. Android first, iOS soon after." />
   <meta name="theme-color" content="#FAF7F2" />
   <meta name="color-scheme" content="light" />
   <link rel="canonical" href="https://jointableside.app/" />
@@ -14,15 +14,15 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Tableside" />
-  <meta property="og:title" content="Tableside — Consider it plated." />
+  <meta property="og:title" content="Tableside. Consider it plated." />
   <meta property="og:description" content="Because 'I don't know, what do you want?' is not a meal plan. Coming soon." />
   <meta property="og:url" content="https://jointableside.app/" />
   <meta property="og:image" content="https://jointableside.app/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="The Tableside logo beside a phone showing this week's dinner menu, with the line Coming soon." />
+  <meta property="og:image:alt" content="The Tableside logo beside a phone showing the week's dinners." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tableside — Consider it plated." />
+  <meta name="twitter:title" content="Tableside. Consider it plated." />
   <meta name="twitter:description" content="Because 'I don't know, what do you want?' is not a meal plan. Coming soon." />
   <meta name="twitter:image" content="https://jointableside.app/assets/og.png" />
 
@@ -298,6 +298,10 @@
       display: block; color: var(--ink); font-weight: 500; font-size: 15.5px; margin-bottom: 1px;
     }
 
+    /* Avoid single-word last lines */
+    .lede, .body, .points li > span, .plan-item p { text-wrap: pretty; }
+    .plan-item h3, .invite .body { text-wrap: balance; }
+
     /* Intro to the walk-through */
     .intro { text-align: center; max-width: 760px; margin: 0 auto; }
     .intro .sec-eyebrow { justify-content: center; }
@@ -443,10 +447,10 @@
         <div class="hero-copy">
           <p class="eyebrow caps"><span>Coming soon<span class="eb-sep" aria-hidden="true"> &nbsp;·&nbsp; </span><span class="eb-2">Android first, iOS soon after</span></span></p>
           <h1 id="hero-title">Because &ldquo;I don&rsquo;t know,<br> what do you want?&rdquo;<br> <em>is not a meal plan.</em></h1>
-          <p class="lede">Tableside is the meal planning app for every household that has to get dinner on the table. <strong>Your week, planned. Your grocery list, done.</strong> Your whole household, on the same page.</p>
+          <p class="lede">Tableside is meal planning for every household that has to get dinner on the table. <strong>Your week, planned. Your grocery list, done.</strong> And everyone on the same page.</p>
 
           <form class="signup" data-signup novalidate>
-            <label class="signup-label caps" for="hero-email">Be first to know when we launch</label>
+            <label class="signup-label caps" for="hero-email">Hear from us when it&rsquo;s ready</label>
             <div class="signup-row" data-row>
               <input type="email" id="hero-email" name="email" class="signup-input" placeholder="your@email.com" autocomplete="email" required aria-describedby="hero-fine" />
               <button type="submit" class="btn">Notify me</button>
@@ -462,13 +466,13 @@
             <figure class="front">
               <div class="phone"><div class="screen">
                 <img src="assets/screens/menu.webp" width="804" height="1748" fetchpriority="high"
-                     alt="Tableside's Menu screen for Nov 23–29: tonight is Chicken Tikka Masala with a Start Cooking button, followed by Garlic Shrimp Spaghetti, Crispy Chickpea Tacos, Crispy Salmon &amp; Greens and Steak Frites, with a Shuffle All button at the top." />
+                     alt="A week of dinners, starting tonight with Chicken Tikka Masala." />
               </div></div>
             </figure>
             <figure class="back">
               <div class="phone"><div class="screen">
                 <img src="assets/screens/recipe.webp" width="804" height="1748"
-                     alt="The Chicken Tikka Masala recipe page: a photo, star ratings from Maya and Theo, servings and prep time, and a note that says “Double the sauce. Theo always wants extra for the naan.”" />
+                     alt="A Chicken Tikka Masala recipe with ratings and a note to double the sauce." />
               </div></div>
             </figure>
           </div>
@@ -483,22 +487,22 @@
       <div class="intro reveal">
         <div class="sec-eyebrow"><span class="num">01</span><span class="line" aria-hidden="true"></span><span class="caps">Plan the week</span></div>
         <h2 class="title" id="plan-title">The week, <em>decided.</em></h2>
-        <p class="body">Sunday&rsquo;s twenty-minute debate becomes one tap. Tableside fills the nights you&rsquo;re cooking from recipes you already love.</p>
+        <p class="body">Skip Sunday&rsquo;s twenty-minute debate. Tableside fills the nights you&rsquo;re cooking with recipes you&rsquo;ve saved.</p>
       </div>
       <div class="plan-grid">
         <div class="plan-item reveal">
           <span class="num">i.</span>
           <h3>Pick your cooking days.</h3>
-          <p>Cooking six nights this week? Three? Tell it which nights, and leave the rest for leftovers, takeout or dinner out.</p>
+          <p>Six nights this week? Three? Leave the rest for leftovers, takeout or dinner out.</p>
         </div>
         <div class="plan-item reveal">
           <span class="num">ii.</span>
           <h3>Shuffle the week, or one night.</h3>
-          <p>Fill every night in one tap. Not feeling Wednesday? Shuffle just that one and keep the rest.</p>
+          <p>Dinner, picked for you. Not feeling Wednesday? Change just Wednesday.</p>
         </div>
         <div class="plan-item reveal">
           <span class="num">iii.</span>
-          <h3>No repeats.</h3>
+          <h3>Fewer reruns.</h3>
           <p>It steers clear of what you just had, so Tuesday doesn&rsquo;t taste like Monday.</p>
         </div>
       </div>
@@ -512,12 +516,12 @@
         <div class="copy reveal">
           <div class="sec-eyebrow"><span class="num">02</span><span class="line" aria-hidden="true"></span><span class="caps">Your recipes</span></div>
           <h2 class="title" id="library-title">Every recipe, <em>one shelf.</em></h2>
-          <p class="body">Everything you cook in one place, not 47 browser tabs. Bring recipes in however they live in your life.</p>
+          <p class="body">Everything you cook in one place, not 47 browser tabs. Bring recipes in however you keep them.</p>
           <ul class="points">
-            <li><span><strong>Paste a link.</strong>From any recipe site. The ingredients and steps come in for you.</span></li>
-            <li><span><strong>Describe it from memory.</strong>Grandma&rsquo;s chili, that dish from the place downtown. Tell it what you remember and it shapes it into a recipe.</span></li>
-            <li><span><strong>Or write it by hand.</strong>A blank page, every field yours.</span></li>
-            <li><span><strong>Photos, ratings and notes.</strong>Everyone at the table rates what they ate, and your notes (&ldquo;double the sauce&rdquo;) stay with the recipe.</span></li>
+            <li><span><strong>Paste a link.</strong>The ingredients and steps come in for you, ready to cook from.</span></li>
+            <li><span><strong>Describe it from memory.</strong>Grandma&rsquo;s chili, that dish from the place downtown. Tell us what you remember and we&rsquo;ll make it a recipe.</span></li>
+            <li><span><strong>Or write it by hand.</strong>A blank page, for the ones you know by heart.</span></li>
+            <li><span><strong>Photos, ratings and notes.</strong>Rate what you made. &ldquo;Double the sauce&rdquo; will be there next time.</span></li>
           </ul>
         </div>
         <div class="visual reveal">
@@ -525,13 +529,13 @@
             <figure class="front">
               <div class="phone"><div class="screen">
                 <img src="assets/screens/library.webp" width="804" height="1748" loading="lazy" decoding="async"
-                     alt="The Library: a photo grid of 12 recipes including Rainbow Buddha Bowl, Pork &amp; Chive Dumplings, Steak Frites and Herby Greek Meatballs, each with cuisine, time and rating." />
+                     alt="Saved recipes with photos, including Steak Frites and Pork &amp; Chive Dumplings." />
               </div></div>
             </figure>
             <figure class="back">
               <div class="phone"><div class="screen">
                 <img src="assets/screens/add-recipe.webp" width="804" height="1748" loading="lazy" decoding="async"
-                     alt="The New recipe sheet with three choices: Paste a link (recommended), Describe it from memory, and Write it by hand." />
+                     alt="Three ways to add a recipe: paste a link, describe it from memory or write it by hand." />
               </div></div>
             </figure>
           </div>
@@ -547,11 +551,11 @@
         <div class="copy reveal">
           <div class="sec-eyebrow"><span class="num">03</span><span class="line" aria-hidden="true"></span><span class="caps">The grocery list</span></div>
           <h2 class="title" id="grocery-title">The list <em>writes itself.</em></h2>
-          <p class="body">Plan the week and your grocery list is already done, built from every dinner on the menu.</p>
+          <p class="body">Plan your dinners and the grocery list is already done.</p>
           <ul class="points">
-            <li><span><strong>Sorted by aisle.</strong>Produce with produce, dairy with dairy. Check things off as you go.</span></li>
-            <li><span><strong>Skips your pantry staples.</strong>Tell it what you always keep on hand and it stops adding olive oil to the list.</span></li>
-            <li><span><strong>One list for the house.</strong>Whoever makes it to the store has the same list.</span></li>
+            <li><span><strong>Sorted by aisle.</strong>Produce with produce, dairy with dairy. Fewer laps of the store.</span></li>
+            <li><span><strong>Skips your pantry staples.</strong>Tell it what you always have, and it won&rsquo;t send you home with a third olive oil.</span></li>
+            <li><span><strong>One list for the house.</strong>Whoever ends up at the store already has it.</span></li>
           </ul>
         </div>
         <div class="visual reveal">
@@ -559,13 +563,13 @@
             <figure class="front">
               <div class="phone"><div class="screen">
                 <img src="assets/screens/grocery.webp" width="804" height="1748" loading="lazy" decoding="async"
-                     alt="The Grocery list, 38 items, with the Produce aisle open: garlic, fresh ginger, crushed tomatoes, cilantro and more, with yellow onion and limes checked off." />
+                     alt="A grocery list sorted by aisle, with yellow onion and limes checked off." />
               </div></div>
             </figure>
             <figure class="back">
               <div class="phone"><div class="screen">
                 <img src="assets/screens/pantry.webp" width="804" height="1748" loading="lazy" decoding="async"
-                     alt="The Pantry screen: staples you always have on hand, like basmati rice, flour, olive oil and salt, grouped by aisle. These are skipped on the grocery list." />
+                     alt="A list of pantry staples, including rice, flour and olive oil." />
               </div></div>
             </figure>
           </div>
@@ -579,13 +583,13 @@
     <div class="container">
       <div class="feature">
         <div class="copy reveal">
-          <div class="sec-eyebrow"><span class="num">04</span><span class="line" aria-hidden="true"></span><span class="caps">Cook Mode</span></div>
+          <div class="sec-eyebrow"><span class="num">04</span><span class="line" aria-hidden="true"></span><span class="caps">Time to cook</span></div>
           <h2 class="title" id="cook-title">One step at a time, <em>hands full.</em></h2>
-          <p class="body">When it&rsquo;s time to cook, the recipe steps aside for Cook Mode: large type on a dark walnut screen, one step at a time.</p>
+          <p class="body">Dinner&rsquo;s on the stove and your hands are busy. Here&rsquo;s the step you&rsquo;re on, and nothing to scroll past.</p>
           <ul class="points">
-            <li><span><strong>Built-in timers.</strong>Tap an underlined time in a step and the timer starts.</span></li>
-            <li><span><strong>Just this step&rsquo;s ingredients.</strong>Measured out right below the step, so you&rsquo;re not scrolling back to the top with garlic on your hands.</span></li>
-            <li><span><strong>Your notes come along.</strong>The reminder you left yourself last time is right at the top.</span></li>
+            <li><span><strong>A timer when you need one.</strong>Tap the time in the step and it starts counting. No leaving the recipe to set one.</span></li>
+            <li><span><strong>Just what this step needs.</strong>Amounts included, so you&rsquo;re not scrolling back to the top with garlic on your hands.</span></li>
+            <li><span><strong>Your notes come along.</strong>What you learned last time is there before you start.</span></li>
           </ul>
         </div>
         <div class="visual reveal">
@@ -593,7 +597,7 @@
             <figure>
               <div class="phone"><div class="screen">
                 <img src="assets/screens/cook.webp" width="804" height="1748" loading="lazy" decoding="async"
-                     alt="Cook Mode on a dark walnut screen: step 1 of 5 for Chicken Tikka Masala, “Toss the chicken with yogurt, half the garam masala, cumin, paprika, garlic and ginger. Marinate at least 1 hour,” with the step's ingredients listed below and Timer and Next buttons." />
+                     alt="The first step of Chicken Tikka Masala, with a note and the ingredients for that step." />
               </div></div>
             </figure>
           </div>
@@ -609,10 +613,10 @@
         <div class="copy reveal">
           <div class="sec-eyebrow"><span class="num">05</span><span class="line" aria-hidden="true"></span><span class="caps">Your table</span></div>
           <h2 class="title" id="table-title">Who sits at <em>your table.</em></h2>
-          <p class="body">Tableside is built for a household, not one person with a recipe box. Bring everyone to the table, from the ones who cook to the ones who just eat.</p>
+          <p class="body">Dinner is rarely one person&rsquo;s problem. Bring everyone to the table, from the ones who cook to the ones who just eat.</p>
           <ul class="points">
-            <li><span><strong>Everyone&rsquo;s preferences.</strong>Each person at the table has their own, from the partner who rates everything to the toddler who eats only noodles.</span></li>
-            <li><span><strong>One plan, one list.</strong>Shared in real time, so nobody plans dinner twice and nobody buys milk twice.</span></li>
+            <li><span><strong>What everyone eats.</strong>Who&rsquo;s allergic. Who won&rsquo;t touch mushrooms. Written down, so it&rsquo;s not all in your head.</span></li>
+            <li><span><strong>One plan, one list.</strong>Changes show up for everyone right away, so nobody plans dinner twice or buys milk twice.</span></li>
           </ul>
         </div>
         <div class="visual reveal">
@@ -620,7 +624,7 @@
             <figure>
               <div class="phone"><div class="screen">
                 <img src="assets/screens/table.webp" width="804" height="1748" loading="lazy" decoding="async"
-                     alt="The Your table screen: Maya cooks with Theo, and their table includes Maya (adult), Theo (adult) and Juniper (kid), plus a card to add who's eating." />
+                     alt="A household of two adults and a kid, with room to add who’s eating." />
               </div></div>
             </figure>
           </div>
@@ -643,10 +647,10 @@
       <div class="reveal">
         <p class="kicker">Consider this your invitation.</p>
         <h2 class="title" id="invite-title">Pull up a <em>chair.</em></h2>
-        <p class="body">Leave your email and we&rsquo;ll send one note when Tableside is ready for your table.</p>
+        <p class="body">Leave your email. We&rsquo;ll send one note when it&rsquo;s ready.</p>
 
         <form class="signup" data-signup novalidate>
-          <label class="signup-label caps" for="invite-email">Be first to know when we launch</label>
+          <label class="signup-label caps" for="invite-email">Hear from us when it&rsquo;s ready</label>
           <div class="signup-row" data-row>
             <input type="email" id="invite-email" name="email" class="signup-input" placeholder="your@email.com" autocomplete="email" required aria-describedby="invite-fine" />
             <button type="submit" class="btn">Notify me</button>
